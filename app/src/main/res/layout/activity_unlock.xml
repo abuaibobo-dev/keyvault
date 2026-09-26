@@ -1,38 +1,83 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center"
-    android:padding="24dp">
+    android:background="@color/vault_bg"
+    android:padding="32dp">
+
+    <!-- 标记：唯一的品牌记忆点 -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="◈"
+        android:textColor="@color/vault_brass"
+        android:textSize="28sp"
+        android:letterSpacing="0.12"
+        tools:ignore="HardcodedText" />
+
+    <!-- 标题文案由 UnlockActivity 写入（首次运行＝设置主密码，否则＝解锁） -->
     <TextView
         android:id="@+id/title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/set_password"
-        android:textSize="22sp" />
-    <EditText
-        android:id="@+id/password"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/vault_text_dim"
+        android:textSize="14sp"
+        tools:text="@string/unlock" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/passwordLayout"
+        style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
         android:hint="@string/password"
-        android:inputType="textPassword"
-        android:importantForAutofill="no" />
-    <EditText
-        android:id="@+id/passwordConfirm"
+        app:boxStrokeColor="@color/vault_brass">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:importantForAutofill="no" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/passwordConfirmLayout"
+        style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
         android:hint="@string/password_confirm"
-        android:inputType="textPassword"
-        android:importantForAutofill="no" />
+        app:boxStrokeColor="@color/vault_brass">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/passwordConfirm"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:importantForAutofill="no" />
+    </com.google.android.material.textfield.TextInputLayout>
+
     <Button
         android:id="@+id/action"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/action_save" />
+        android:layout_height="52dp"
+        android:layout_marginTop="24dp"
+        android:backgroundTint="@color/vault_brass"
+        android:textColor="@color/vault_on_brass"
+        android:textSize="16sp"
+        app:cornerRadius="12dp" />
+
     <TextView
         android:id="@+id/error"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textColor="#D32F2F" />
+        android:layout_marginTop="12dp"
+        android:textColor="@color/vault_error"
+        android:textSize="13sp" />
 </LinearLayout>

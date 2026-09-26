@@ -21,6 +21,7 @@
     <string name="empty_notes">还没有笔记，点右下角 + 新增</string>
     <string name="name">名称</string>
     <string name="value">值</string>
+    <string name="value_length">长度</string>
     <string name="note">备注</string>
     <string name="tags">标签（逗号分隔）</string>
     <string name="title">标题</string>

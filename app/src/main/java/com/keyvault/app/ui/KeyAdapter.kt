@@ -15,6 +15,7 @@ class KeyAdapter(
 ) : RecyclerView.Adapter<KeyAdapter.VH>() {
     class VH(v: View) : RecyclerView.ViewHolder(v) {
         val name: TextView = v.findViewById(R.id.name)
+        val valuePreview: TextView = v.findViewById(R.id.valuePreview)
         val tags: TextView = v.findViewById(R.id.tags)
     }
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): VH =
@@ -23,6 +24,7 @@ class KeyAdapter(
     override fun onBindViewHolder(holder: VH, position: Int) {
         val item = items[position]
         holder.name.text = item.name
+        holder.valuePreview.text = item.value.take(4) + "••••••"
         holder.tags.text = item.tags.joinToString(" ")
         holder.itemView.setOnClickListener { onClick(item) }
         holder.itemView.setOnLongClickListener { onLongClick(item); true }

@@ -1,3 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <style name="Theme.KeyVault" parent="Theme.Material3.DayNight.NoActionBar" />
+    <style name="Theme.KeyVault" parent="Theme.Material3.Dark.NoActionBar">
+        <item name="colorPrimary">@color/vault_brass</item>
+        <item name="colorOnPrimary">@color/vault_on_brass</item>
+        <item name="colorPrimaryContainer">@color/vault_panel</item>
+        <item name="colorOnPrimaryContainer">@color/vault_brass</item>
+        <item name="colorSecondary">@color/vault_text_dim</item>
+        <item name="colorSurface">@color/vault_bg</item>
+        <item name="colorOnSurface">@color/vault_text</item>
+        <item name="colorSurfaceVariant">@color/vault_panel</item>
+        <item name="colorOnSurfaceVariant">@color/vault_text_dim</item>
+        <item name="colorOutline">@color/vault_line</item>
+        <item name="colorOutlineVariant">@color/vault_line</item>
+        <item name="android:colorBackground">@color/vault_bg</item>
+        <item name="colorOnBackground">@color/vault_text</item>
+        <item name="colorError">@color/vault_error</item>
+        <item name="android:statusBarColor">@color/vault_bg</item>
+        <item name="android:navigationBarColor">@color/vault_bg</item>
+        <item name="android:windowBackground">@color/vault_bg</item>
+    </style>
 </resources>

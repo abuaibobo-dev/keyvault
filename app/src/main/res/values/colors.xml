@@ -1,3 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="seed">#3F51B5</color>
+
+    <!-- KeyVault UI 重设计：深色「保管箱」色板 -->
+    <!-- 背景：石墨 -->
+    <color name="vault_bg">#16181D</color>
+    <!-- 面板 -->
+    <color name="vault_panel">#1E2128</color>
+    <!-- 细分隔线 -->
+    <color name="vault_line">#2C313A</color>
+    <!-- 黄铜强调：仅主操作/复制反馈 -->
+    <color name="vault_brass">#C9A24B</color>
+    <!-- 黄铜上的文字 -->
+    <color name="vault_on_brass">#1A1408</color>
+    <!-- "已复制" -->
+    <color name="vault_green">#5FB58A</color>
+    <!-- 主文字 -->
+    <color name="vault_text">#E7E9EE</color>
+    <!-- 次级文字 -->
+    <color name="vault_text_dim">#9AA3B2</color>
+    <color name="vault_error">#E5484D</color>
 </resources>

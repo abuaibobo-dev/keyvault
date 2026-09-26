@@ -28,6 +28,7 @@ class UnlockActivity : AppCompatActivity() {
         val title = findViewById<TextView>(R.id.title)
 
         confirm.visibility = if (firstRun) View.VISIBLE else View.GONE
+        (confirm.parent as? android.view.View)?.visibility = confirm.visibility
         action.text = getString(if (firstRun) R.string.action_save else R.string.unlock)
         title.text = getString(if (firstRun) R.string.set_password else R.string.unlock)
 
