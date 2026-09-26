@@ -1,0 +1,56 @@
+name: Build Android APK
+
+on:
+  push:
+    branches: [ "main", "master" ]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+
+      - name: Setup Gradle
+        uses: gradle/actions/setup-gradle@v3
+        with:
+          gradle-version: '8.11.1'
+
+      - name: Run Unit Tests
+        run: gradle testDebugUnitTest --no-daemon
+
+      - name: Build APK (Without Wrapper)
+        run: gradle assembleDebug --no-daemon
+
+      - name: Set Date
+        run: echo "APK_DATE=$(date +%Y%m%d)" >> $GITHUB_ENV
+
+      - name: Package APK
+        run: |
+          mkdir -p app/build/outputs/apk/release
+          cp app/build/outputs/apk/debug/app-debug.apk "app/build/outputs/apk/release/KeyVault-${APK_DATE}-build-${{ github.run_number }}.apk"
+
+      - name: Upload APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: KeyVault-${{ env.APK_DATE }}-build-${{ github.run_number }}
+          path: app/build/outputs/apk/release/KeyVault-*.apk
+
+      - name: Create Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: keyvault-build-${{ github.run_number }}
+          name: KeyVault build ${{ github.run_number }} (${{ env.APK_DATE }})
+          body: "本地加密的密钥 + 记事本管理 App（Kotlin + Material，主密码 + AES-256-GCM）。"
+          files: app/build/outputs/apk/release/KeyVault-*.apk
+          prerelease: true
