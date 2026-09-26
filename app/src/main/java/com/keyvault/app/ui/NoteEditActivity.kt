@@ -8,7 +8,6 @@ import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
-import com.keyvault
 import com.keyvault.app.R
 import com.keyvault.app.Session
 import com.keyvault.app.data.NoteItem
