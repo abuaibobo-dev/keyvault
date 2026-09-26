@@ -5,6 +5,9 @@ import org.junit.Assert.assertFalse
 import org.junit.Assert.assertNotEquals
 import org.junit.Test
 import java.security.GeneralSecurityException
+import javax.crypto.Cipher
+import javax.crypto.spec.GCMParameterSpec
+import javax.crypto.spec.SecretKeySpec
 
 class VaultCryptoTest {
     private val pw = "correct horse".toCharArray()
@@ -35,5 +38,14 @@ class VaultCryptoTest {
     }
     @Test fun saltIs16Bytes() {
         org.junit.Assert.assertEquals(16, VaultCrypto.newSalt().size)
+    }
+    @Test fun fixedIvCiphertextLayoutRemainsCompatible() {
+        val key = SecretKeySpec(ByteArray(32) { it.toByte() }, "AES")
+        val iv = ByteArray(12) { (it + 10).toByte() }
+        val message = "legacy payload".toByteArray()
+        val cipher = Cipher.getInstance("AES/GCM/NoPadding")
+        cipher.init(Cipher.ENCRYPT_MODE, key, GCMParameterSpec(128, iv))
+        val legacyBlob = iv + cipher.doFinal(message)
+        assertArrayEquals(message, VaultCrypto.decrypt(key, legacyBlob))
     }
 }

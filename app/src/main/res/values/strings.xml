@@ -1,29 +1,3 @@
 <resources>
     <string name="app_name">KeyVault</string>
-    <string name="tab_keys">密钥</string>
-    <string name="tab_notes">笔记</string>
-    <string name="search_hint">搜索</string>
-    <string name="unlock">解锁</string>
-    <string name="set_password">设置主密码</string>
-    <string name="password">主密码</string>
-    <string name="password_confirm">确认主密码</string>
-    <string name="error_password_short">密码至少 8 位</string>
-    <string name="error_password_mismatch">两次输入不一致</string>
-    <string name="error_unlock_failed">密码错误或数据损坏</string>
-    <string name="action_save">保存</string>
-    <string name="action_delete">删除</string>
-    <string name="action_edit">编辑</string>
-    <string name="action_copy">复制</string>
-    <string name="action_generate">生成</string>
-    <string name="copied">已复制</string>
-    <string name="confirm_delete">确认删除？</string>
-    <string name="empty_keys">还没有密钥，点右下角 + 新增</string>
-    <string name="empty_notes">还没有笔记，点右下角 + 新增</string>
-    <string name="name">名称</string>
-    <string name="value">值</string>
-    <string name="value_length">长度</string>
-    <string name="note">备注</string>
-    <string name="tags">标签（逗号分隔）</string>
-    <string name="title">标题</string>
-    <string name="body">正文</string>
 </resources>

@@ -10,6 +10,8 @@ data class KeyItem(
     var tags: List<String> = emptyList(),
     val createdAt: Long = System.currentTimeMillis(),
     var updatedAt: Long = System.currentTimeMillis(),
+    var pinned: Boolean = false,
+    var category: String = "",
 )
 
 data class NoteItem(
@@ -19,6 +21,9 @@ data class NoteItem(
     var tags: List<String> = emptyList(),
     val createdAt: Long = System.currentTimeMillis(),
     var updatedAt: Long = System.currentTimeMillis(),
+    var pinned: Boolean = false,
+    var favorite: Boolean = false,
+    var category: String = "",
 )
 
 data class Vault(
