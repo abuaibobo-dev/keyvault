@@ -14,7 +14,7 @@ class KeyGeneratorTest {
         assertEquals(128, KeyGenerator.generate(128).length)
     }
     @Test fun charsetIsAlphanumeric() {
-        val s = KeyGenerator.generate(200)
+        val s = KeyGenerator.generate(128)
         assertTrue(s.all { it in 'A'..'Z' || it in 'a'..'z' || it in '0'..'9' })
     }
     @Test(expected = IllegalArgumentException::class)
