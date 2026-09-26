@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:orientation="vertical" android:padding="16dp">
+    <EditText android:id="@+id/title" android:layout_width="match_parent"
+        android:layout_height="wrap_content" android:hint="@string/title" />
+    <EditText android:id="@+id/body" android:layout_width="match_parent"
+        android:layout_height="0dp" android:layout_weight="1"
+        android:gravity="top" android:hint="@string/body"
+        android:inputType="textMultiLine" />
+    <EditText android:id="@+id/tags" android:layout_width="match_parent"
+        android:layout_height="wrap_content" android:hint="@string/tags" />
+    <Button android:id="@+id/save" android:layout_width="match_parent"
+        android:layout_height="wrap_content" android:text="@string/action_save" />
+    <Button android:id="@+id/delete" android:layout_width="match_parent"
+        android:layout_height="wrap_content" android:text="@string/action_delete"
+        android:visibility="gone" />
+</LinearLayout>
