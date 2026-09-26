@@ -2,7 +2,7 @@ name: Build Android APK
 
 on:
   push:
-    branches: [ "keyvault" ]
+    branches: [ "main", "master" ]
   workflow_dispatch:
 
 permissions:
